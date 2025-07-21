@@ -1,10 +1,10 @@
 //your parameter variables go here!
 let centersize = 40;
-let petalwidth = 25;
-let petalheight = 90;
+let petalwidth = 30;
+let petalheight = 120;
 let flower1x = 90;
 let flower1y = 90;
-let dotsize = 5;
+let dotsize = 12;
 
 
 function setup_wallpaper(pWallpaper) {
@@ -27,6 +27,8 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+
+// flower pattern 
 strokeWeight(0)
 
 fill(80, 0, 145)
