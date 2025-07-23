@@ -9,7 +9,7 @@ let dotsize = 12;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
- // pWallpaper.output_mode(GRID_WALLPAPER);
+ //pWallpaper.output_mode(GRID_WALLPAPER);
   //pWallpaper.output_mode(GLIDE_WALLPAPER);
 
 
@@ -19,7 +19,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 90;
+  pWallpaper.grid_settings.row_offset  = 100;
 }
 
 function wallpaper_background() {
@@ -27,12 +27,94 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+// triangle(15, 10, 65, 10, 40, 30)
+// triangle(75, 10, 125, 10, 100, 35)
+// triangle(15, 20, 15, 70, 35, 45)
 
-ellipse(100, 160, 80, 20)
-ellipse(100, 120, 20, 80)
-ellipse(90, 120, 15, 80)
+// bottom left
+fill(144, 224, 239)
+triangle(17.5, 110, 82.5, 110, 50, 140)
+fill(0, 180, 216)
+triangle(10, 117.5, 10, 182.5, 40, 150)
+fill(202, 240, 248)
+triangle(17.5, 190, 82.5, 190, 50, 160)
+fill(0, 119, 182)
+triangle(90, 117.5, 90, 182.5, 60, 150)
+
+fill(3, 4, 94)
+// center 
+  beginShape();
+  vertex(50, 140);
+  vertex(40, 150);
+  vertex(50, 160);
+  vertex(60, 150);
+  endShape(CLOSE);
+
+// top left 
+fill(202, 240, 248)
+triangle(17.5, 10, 82.5, 10, 50, 40)
+fill(0, 180, 216)
+triangle(10, 17.5, 10, 82.5, 40, 50)
+fill(144, 224, 239)
+triangle(17.5, 90, 82.5, 90, 50, 60)
+fill(0, 119, 182)
+triangle(90, 17.5, 90, 82.5, 60, 50)
+
+fill(3, 4, 94)
+// center 
+  beginShape();
+  vertex(50, 40);
+  vertex(40, 50);
+  vertex(50, 60);
+  vertex(60, 50);
+  endShape(CLOSE);
 
 
+// bottom right
+fill(144, 224, 239)
+triangle(117.5, 110, 182.5, 110, 150, 140)
+fill(0, 119, 182)
+triangle(110, 117.5, 110, 182.5, 140, 150)
+fill(202, 240, 248)
+triangle(117.5, 190, 182.5, 190, 150, 160)
+fill(0, 180, 216)
+triangle(190, 117.5, 190, 182.5, 160, 150)
+
+fill(3, 4, 94) // navy
+// center 
+  beginShape();
+  vertex(150, 140);
+  vertex(140, 150);
+  vertex(150, 160);
+  vertex(160, 150);
+  endShape(CLOSE);
+
+
+// top right
+fill(202, 240, 248) // very light  
+triangle(117.5, 10, 182.5, 10, 150, 40)
+fill(0, 119, 182) // dark
+triangle(110, 17.5, 110, 82.5, 140, 50)
+fill(144, 224, 239) // light
+triangle(117.5, 90, 182.5, 90, 150, 60)
+fill(0, 180, 216) // mid
+triangle(190, 17.5, 190, 82.5, 160, 50)
+
+fill(3, 4, 94)
+// center 
+  beginShape();
+  vertex(150, 40);
+  vertex(140, 50);
+  vertex(150, 60);
+  vertex(160, 50);
+  endShape(CLOSE);
+
+  // heart 
+// fill(245, 66, 75)
+// noStroke()
+// ellipse(75, 50, 50,50)
+// ellipse(125, 50, 50,50)
+// triangle(50, 55, 150, 55, 100, 130)
 
 // // flower pattern 
 // strokeWeight(0)
