@@ -1,14 +1,20 @@
 //your parameter variables go here!
-let centersize = 40;
-let petalwidth = 30;
-let petalheight = 120;
-let flower1x = 90;
-let flower1y = 90;
-let dotsize = 12;
+// let centersize = 40;
+// let petalwidth = 30;
+// let petalheight = 120;
+// let flower1x = 90;
+// let flower1y = 90;
+// let dotsize = 12;
 
+let start = 100;
+let centrecircle = 25;
+let pluscircle = 15;
+let outercircle = 20;
+let dots = 6;
+let linestrokeweight = 3; 
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
+function setup_wallpaper(pWallpaper) {  
+ pWallpaper.output_mode(DEVELOP_GLYPH);
  //pWallpaper.output_mode(GRID_WALLPAPER);
   //pWallpaper.output_mode(GLIDE_WALLPAPER);
 
@@ -19,7 +25,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 100;
+  pWallpaper.grid_settings.row_offset  = 0;
 }
 
 function wallpaper_background() {
@@ -27,89 +33,170 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-// triangle(15, 10, 65, 10, 40, 30)
-// triangle(75, 10, 125, 10, 100, 35)
-// triangle(15, 20, 15, 70, 35, 45)
+
+// circles 
+
+// centre circle 
+ circle(start, start, centrecircle);
+
+ // plus circles
+circle(start, start-100, pluscircle);
+circle(start, start+100, pluscircle);
+circle(start-100, start, pluscircle);
+circle(start+100, start, pluscircle);
+
+ // outer circles
+ circle(start-100, start-100, outercircle);
+circle(start+100, start-100, outercircle);
+circle(start-100, start+100, outercircle);
+circle(start+100, start+100, outercircle);
+
+  
+// lines 
+strokeWeight(linestrokeweight);
+line(start, start-17.5, start, start-82.5);
+line(start, start+82.5, start, start+17.5);
+line(start+82.5, start, start+17.5, start);
+line(start-17.5, start, start-82.5, start);
+
+strokeWeight(1);
+// beginShape();
+//   vertex(100, 95);               // Top point
+//   vertex(107, 97);                // Inner point right of top
+//   vertex(104, 97);               // Outer right point
+//   vertex(111, 104);                // Inner lower-right
+//   vertex(105, 102);               // Bottom right point
+//   vertex(100, 112);                // Bottom center inner
+//   vertex(95, 102);              // Bottom left point
+//   vertex(89, 104);               // Inner lower-left
+//   vertex(96, 97);              // Outer left point
+//   vertex(97, 97);               // Inner point left of top
+//   endShape(CLOSE);
+
+//  beginShape();
+//   vertex(100, 75);               // Top point
+//   vertex(107, 93);                // Inner point right of top
+//   vertex(124, 93);               // Outer right point
+//   vertex(111, 104);                // Inner lower-right
+//   vertex(115, 121);               // Bottom right point
+//   vertex(100, 112);                // Bottom center inner
+//   vertex(85, 121);              // Bottom left point
+//   vertex(89, 104);               // Inner lower-left
+//   vertex(76, 93);              // Outer left point
+//   vertex(93, 93);               // Inner point left of top
+//   endShape(CLOSE);
+
+//  beginShape();
+//   vertex(0, -25);               // Top point
+//   vertex(7, -7);                // Inner point right of top
+//   vertex(24, -7);               // Outer right point
+//   vertex(11, 4);                // Inner lower-right
+//   vertex(15, 21);               // Bottom right point
+//   vertex(0, 12);                // Bottom center inner
+//   vertex(-15, 21);              // Bottom left point
+//   vertex(-11, 4);               // Inner lower-left
+//   vertex(-24, -7);              // Outer left point
+//   vertex(-7, -7);               // Inner point left of top
+//   endShape(CLOSE);
+ 
+// // star
+// fill(3, 4, 94)
+// // center 
+//   beginShape();
+//   vertex(start, start-5);
+//    vertex(start-1, start-4.5);
+//   vertex(start-4, start-1.5);
+//   vertex(start-2.5, start+5);
+//   vertex(start+2.5, start+5);
+//   vertex(start+4, start-1.5);
+//   endShape(CLOSE);
 
 // bottom left
 fill(144, 224, 239)
-triangle(17.5, 110, 82.5, 110, 50, 140)
+triangle(start-82.5, start+10, start-17.5, start+10, start-50, start+40)
 fill(0, 180, 216)
-triangle(10, 117.5, 10, 182.5, 40, 150)
+triangle(start-90, start+17.5, start-90, start+82.5, start-60, start+50)
 fill(202, 240, 248)
-triangle(17.5, 190, 82.5, 190, 50, 160)
+triangle(start-82.5, start+90, start-17.5, start+90, start-50, start+60)
 fill(0, 119, 182)
-triangle(90, 117.5, 90, 182.5, 60, 150)
+triangle(start-10, start+17.5, start-10, start+82.5, start-40, start+50)
 
 fill(3, 4, 94)
 // center 
   beginShape();
-  vertex(50, 140);
-  vertex(40, 150);
-  vertex(50, 160);
-  vertex(60, 150);
+  vertex(start-50, start+40);
+  vertex(start-60, start+50);
+  vertex(start-50, start+60);
+  vertex(start-40, start+50);
   endShape(CLOSE);
 
 // top left 
 fill(202, 240, 248)
-triangle(17.5, 10, 82.5, 10, 50, 40)
+triangle(start-82.5, start-90, start-17.5, start-90, start-50, start-60)
 fill(0, 180, 216)
-triangle(10, 17.5, 10, 82.5, 40, 50)
+triangle(start-90, start-82.5, start-90, start-17.5, start-60, start-50)
 fill(144, 224, 239)
-triangle(17.5, 90, 82.5, 90, 50, 60)
+triangle(start-82.5, start-10, start-17.5, start-10, start-50, start-40)
 fill(0, 119, 182)
-triangle(90, 17.5, 90, 82.5, 60, 50)
+triangle(start-10, start-82.5, start-10, start-17.5, start-40, start-50)
 
 fill(3, 4, 94)
 // center 
   beginShape();
-  vertex(50, 40);
-  vertex(40, 50);
-  vertex(50, 60);
-  vertex(60, 50);
+  vertex(start-50, start-60);
+  vertex(start-60, start-50);
+  vertex(start-50, start-40);
+  vertex(start-40, start-50);
   endShape(CLOSE);
 
 
 // bottom right
 fill(144, 224, 239)
-triangle(117.5, 110, 182.5, 110, 150, 140)
+triangle(start+17.5, start+10, start+82.5, start+10, start+50, start+40)
 fill(0, 119, 182)
-triangle(110, 117.5, 110, 182.5, 140, 150)
+triangle(start+10, start+17.5, start+10, start+82.5, start+40, start+50)
 fill(202, 240, 248)
-triangle(117.5, 190, 182.5, 190, 150, 160)
+triangle(start+17.5, start+90, start+82.5, start+90, start+50, start+60)
 fill(0, 180, 216)
-triangle(190, 117.5, 190, 182.5, 160, 150)
+triangle(start+90, start+17.5, start+90, start+82.5, start+60, start+50)
 
 fill(3, 4, 94) // navy
 // center 
   beginShape();
-  vertex(150, 140);
-  vertex(140, 150);
-  vertex(150, 160);
-  vertex(160, 150);
+  vertex(start+50, start+40);
+  vertex(start+40, start+50);
+  vertex(start+50, start+60);
+  vertex(start+60, start+50);
   endShape(CLOSE);
 
 
 // top right
 fill(202, 240, 248) // very light  
-triangle(117.5, 10, 182.5, 10, 150, 40)
+triangle(start+17.5, start-90, start+82.5, start-90, start+50, start-60)
 fill(0, 119, 182) // dark
-triangle(110, 17.5, 110, 82.5, 140, 50)
+triangle(start+10, start-82.5, start+10, start-17.5, start+40, start-50)
 fill(144, 224, 239) // light
-triangle(117.5, 90, 182.5, 90, 150, 60)
+triangle(start+17.5, start-10, start+82.5, start-10, start+50, start-40)
 fill(0, 180, 216) // mid
-triangle(190, 17.5, 190, 82.5, 160, 50)
+triangle(start+90, start-82.5, start+90, start-17.5, start+60, start-50)
 
 fill(3, 4, 94)
 // center 
   beginShape();
-  vertex(150, 40);
-  vertex(140, 50);
-  vertex(150, 60);
-  vertex(160, 50);
+  vertex(start+50, start-60);
+  vertex(start+40, start-50);
+  vertex(start+50, start-40);
+  vertex(start+60, start-50);
   endShape(CLOSE);
 
-  // heart 
+  fill(255, 4, 94)
+  //dots 
+  circle(50, 50, dots);
+  circle(150, 50, dots);
+  circle(50, 150, dots);
+  circle(150, 150, dots);
+
+//   heart 
 // fill(245, 66, 75)
 // noStroke()
 // ellipse(75, 50, 50,50)
