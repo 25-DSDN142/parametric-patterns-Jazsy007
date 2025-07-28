@@ -11,7 +11,7 @@ let centrecircle = 25;
 let pluscircle = 15;
 let outercircle = 20;
 let dots = 0;
-let linestrokeweight = 3; 
+let linestrokeweight = 2; 
 
 function setup_wallpaper(pWallpaper) {  
  pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -20,7 +20,7 @@ function setup_wallpaper(pWallpaper) {
 
 
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
