@@ -16,6 +16,7 @@ let start = 100;
 let centrecircle = 25;
 let pluscircle = 15;
 let outercircle = 20;
+let smalldots =4;
 let dots = 0; // when dots = 0 if statement on line 206 activates, when dots = 19 if statement on line 242 activates
 //when dots = 14 or less if statement on line 48 activates
 let linestrokeweight = 2; 
@@ -101,7 +102,18 @@ circle(start+100, start-100, outercircle);
 circle(start-100, start+100, outercircle);
 circle(start+100, start+100, outercircle);
 
-  
+// small dots 
+circle(start-50, start, smalldots);
+circle(start+50, start, smalldots);
+circle(start, start+50, smalldots);
+circle(start, start-50, smalldots);
+
+// smaller dots 
+circle(start, start-32, smalldots);
+circle(start, start+32, smalldots);
+circle(start+32, start, smalldots);
+circle(start-32, start, smalldots);
+
 // lines 
 strokeWeight(linestrokeweight);
 line(start, start-17.5, start, start-82.5);
