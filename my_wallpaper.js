@@ -6,21 +6,32 @@
 // let flower1y = 90;
 // let dotsize = 12;
 
+let blue = [202, 240, 248] // very light  
+let blue2 = [144, 224, 239] // light
+let blue3 = [0, 180, 216] // mid 
+let blue4 = [0, 119, 182] // dark
+// colours up here 
+
 let start = 100;
 let centrecircle = 25;
 let pluscircle = 15;
 let outercircle = 20;
-let dots = 0;
+let dots = 0; // when dots = 0 if statement on line 206 activates, when dots = 19 if statement on line 242 activates
+//when dots = 14 or less if statement on line 48 activates
 let linestrokeweight = 2; 
+let Primarycolour = blue;
+let Secondarycolour = blue2;
+let Thirdcolour = blue3;
+let backgroundcolour = blue2;
+
 
 function setup_wallpaper(pWallpaper) {  
  pWallpaper.output_mode(DEVELOP_GLYPH);
  //pWallpaper.output_mode(GRID_WALLPAPER);
   //pWallpaper.output_mode(GLIDE_WALLPAPER);
 
-
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -29,11 +40,11 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(222, 248, 255); //light blue colour
+  background(backgroundcolour); //light blue colour
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-
+stroke(3, 4, 94)
   if(dots < 15){
 fill(3, 4, 94)
 // center 
@@ -76,7 +87,7 @@ fill(3, 4, 94)
 // circles 
 
 // centre circle 
- circle(start, start, centrecircle);
+circle(start, start, centrecircle);
 
  // plus circles
 circle(start, start-100, pluscircle);
@@ -85,7 +96,7 @@ circle(start-100, start, pluscircle);
 circle(start+100, start, pluscircle);
 
  // outer circles
- circle(start-100, start-100, outercircle);
+circle(start-100, start-100, outercircle);
 circle(start+100, start-100, outercircle);
 circle(start-100, start+100, outercircle);
 circle(start+100, start+100, outercircle);
@@ -194,6 +205,42 @@ triangle(start+90, start-82.5, start+90, start-17.5, start+60, start-50)
 
 
  if(dots == 0){
+
+  // inside triangle 
+fill(222, 248, 255); //light blue colour
+// bottom left
+triangle(start-70.5, start+15, start-29.5, start+15, start-50, start+33)
+triangle(start-85, start+29.5, start-85, start+70.5, start-67, start+50)
+triangle(start-70.5, start+85, start-29.5, start+85, start-50, start+67)
+triangle(start-15, start+29.5, start-15, start+70.5, start-33, start+50)
+
+// inside triangle 
+fill(222, 248, 255); //light blue colour
+// top left 
+triangle(start-70.5, start-85, start-29.5, start-85, start-50, start-67)
+triangle(start-85, start-70.5, start-85, start-29.5, start-67, start-50)
+triangle(start-70.5, start-15, start-29.5, start-15, start-50, start-33)
+triangle(start-15, start-70.5, start-15, start-29.5, start-33, start-50)
+
+// inside triangle 
+fill(222, 248, 255); //light blue colour
+// bottom right
+triangle(start+29.5, start+15, start+70.5, start+15, start+50, start+33)
+triangle(start+15, start+29.5, start+15, start+70.5, start+33, start+50)
+triangle(start+29.5, start+85, start+70.5, start+85, start+50, start+67)
+triangle(start+85, start+29.5, start+85, start+70.5, start+67, start+50)
+
+
+// inside triangle 
+fill(222, 248, 255); //light blue colour
+// top right
+triangle(start+29.5, start-85, start+70.5, start-85, start+50, start-67)
+triangle(start+15, start-70.5, start+15, start-29.5, start+33, start-50)
+triangle(start+29.5, start-15, start+70.5, start-15, start+50, start-33)
+triangle(start+85, start-70.5, start+85, start-29.5, start+67, start-50)
+ }
+
+ if(dots == 19){
 
   // inside triangle 
 fill(222, 248, 255); //light blue colour
