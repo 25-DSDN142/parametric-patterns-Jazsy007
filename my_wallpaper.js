@@ -1,29 +1,41 @@
 //your parameter variables go here!
-// let centersize = 40;
-// let petalwidth = 30;
-// let petalheight = 120;
-// let flower1x = 90;
-// let flower1y = 90;
-// let dotsize = 12;
 
+// defining colour palette
 let blue = [202, 240, 248] // very light  
 let blue2 = [144, 224, 239] // light
 let blue3 = [0, 180, 216] // mid 
 let blue4 = [0, 119, 182] // dark
-// colours up here 
 
-let start = 100;
-let centrecircle = 25;
-let pluscircle = 15;
-let outercircle = 20;
-let smalldots =4;
-let dots = 0; // when dots = 0 if statement on line 206 activates, when dots = 19 if statement on line 242 activates
+
+// parameter variables that I will change 
+let start = 100; // sets center of canvas to draw shapes in relation to
+let centrecircle = 25; // sets size of circle in the center of the canvas
+let outercircles = 20; // sets size of circles on the corners of the grid
+let pluscircles = 15; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 5; // sets size of the dots closest to the centre of the canvas
+let seconddots = 4; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 3; // sets size of the dots thrid closest to the centre of the canvas
+
+let diamonddots = 10; // when dots = 0 if statement on line 206 activates, when dots = 19 if statement on line 242 activates
 //when dots = 14 or less if statement on line 48 activates
-let linestrokeweight = 2; 
-let Primarycolour = blue;
-let Secondarycolour = blue2;
-let Thirdcolour = blue3;
-let backgroundcolour = blue2;
+
+let linestrokeweight = 2; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+
+
+let backgroundcolour = blue2; // sets the background colour
+let centrecirclecolour = blue; // sets the colour of the centre circle 
+let outercirclescolour = blue2; // sets the colour of the outer circles 
+let pluscirclescolour = blue3; // sets the colour of the plus circles 
+let firstdotscolour = blue2; // sets the colour of the first set of dots
+let seconddotscolour = blue; // sets the colour of the second set of dots
+let thirddotscolour = blue; // sets the colour of the third set of dots
+let diamonddotscolour = blue; // sets the colour of the diamond dots
+let linescolour = blue;  // sets the colour of the lines
+let outsideverticaltrianglescolour = blue; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = blue; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = blue; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = blue; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = blue; // sets the colour of the smaller triangles that apper in the if statements
 
 
 function setup_wallpaper(pWallpaper) {  
@@ -46,7 +58,7 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 stroke(3, 4, 94)
-  if(dots < 15){
+  if(diamonddots < 15){
 fill(3, 4, 94)
 // center 
   beginShape();
@@ -91,28 +103,35 @@ fill(3, 4, 94)
 circle(start, start, centrecircle);
 
  // plus circles
-circle(start, start-100, pluscircle);
-circle(start, start+100, pluscircle);
-circle(start-100, start, pluscircle);
-circle(start+100, start, pluscircle);
+circle(start, start-100, pluscircles);
+circle(start, start+100, pluscircles);
+circle(start-100, start, pluscircles);
+circle(start+100, start, pluscircles);
 
  // outer circles
-circle(start-100, start-100, outercircle);
-circle(start+100, start-100, outercircle);
-circle(start-100, start+100, outercircle);
-circle(start+100, start+100, outercircle);
+circle(start-100, start-100, outercircles);
+circle(start+100, start-100, outercircles);
+circle(start-100, start+100, outercircles);
+circle(start+100, start+100, outercircles);
 
-// small dots 
-circle(start-50, start, smalldots);
-circle(start+50, start, smalldots);
-circle(start, start+50, smalldots);
-circle(start, start-50, smalldots);
+// first dots 
+circle(start, start-32, firstdots);
+circle(start, start+32, firstdots);
+circle(start+32, start, firstdots);
+circle(start-32, start, firstdots);
 
-// smaller dots 
-circle(start, start-32, smalldots);
-circle(start, start+32, smalldots);
-circle(start+32, start, smalldots);
-circle(start-32, start, smalldots);
+// second dots 
+circle(start-50, start, seconddots);
+circle(start+50, start, seconddots);
+circle(start, start+50, seconddots);
+circle(start, start-50, seconddots);
+
+// third dots 
+circle(start, start-68, thirddots);
+circle(start, start+68, thirddots);
+circle(start+68, start, thirddots);
+circle(start-68, start, thirddots);
+
 
 // lines 
 strokeWeight(linestrokeweight);
@@ -210,13 +229,13 @@ triangle(start+90, start-82.5, start+90, start-17.5, start+60, start-50)
 
   fill(255, 4, 94)
   //dots 
-  circle(50, 50, dots);
-  circle(150, 50, dots);
-  circle(50, 150, dots);
-  circle(150, 150, dots);
+  circle(50, 50, diamonddots);
+  circle(150, 50, diamonddots);
+  circle(50, 150, diamonddots);
+  circle(150, 150, diamonddots);
 
 
- if(dots == 0){
+ if(diamonddots == 0){
 
   // inside triangle 
 fill(222, 248, 255); //light blue colour
