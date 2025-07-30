@@ -18,41 +18,41 @@ let palegreen = [167, 232, 189]; // pale green
 // parameter variables that I will change 
 let start = 100; // sets center of canvas to draw shapes in relation to
 let linestrokeweight = 2; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
-let centrecircle = 25; // sets size of circle in the center of the canvas
-let outercircles = 20; // sets size of circles on the corners of the grid
-let pluscircles = 15; // sets size of the circles in the middle of the corner cirles on the grid boundry 
-let firstdots = 5; // sets size of the dots closest to the centre of the canvas
+let centrecircle = 10; // sets size of circle in the center of the canvas
+let outercircles = 6; // sets size of circles on the corners of the grid
+let pluscircles = 6; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 4; // sets size of the dots closest to the centre of the canvas
 let seconddots = 4; // sets size of the dots second closest to the centre of the canvas
-let thirddots = 3; // sets size of the dots third closest to the centre of the canvas
-let diamonddots = 10; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+let thirddots = 4; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 20; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
 // when diamond dots = 0 if statement on line 206 activates (smaller triangles will be drawn inside the original triangles) 
 // when diamond dots = 19 if statement on line 242 activates (smaller triangles will be drawn inside the original triangles) 
 // when diamond dots = 14 or less if statement on line 48 activates (draws the diamonds underneath the dots)
 
 // colour changing parameter variables
-let backgroundcolour = verypaleblue; // sets the background colour
-let centrecirclecolour = darkblue; // sets the colour of the centre circle 
+let backgroundcolour = palegreen; // sets the background colour
+let centrecirclecolour = bightpink; // sets the colour of the centre circle 
 let outercirclescolour = midblue; // sets the colour of the outer circles 
 let pluscirclescolour = lightblue; // sets the colour of the plus circles 
-let firstdotscolour = palegreen; // sets the colour of the first set of dots
+let firstdotscolour = lightpink; // sets the colour of the first set of dots
 let seconddotscolour = bightpink; // sets the colour of the second set of dots
-let thirddotscolour = palegreen; // sets the colour of the third set of dots
-let diamonddotscolour = lightpink; // sets the colour of the diamond dots
+let thirddotscolour = lightpink; // sets the colour of the third set of dots
+let diamonddotscolour = verypaleblue; // sets the colour of the diamond dots
 let linescolour = navy;  // sets the colour of the lines
-let outsideverticaltrianglescolour = midblue; // sets the colour of the vertical triangles on the edge of the grid 
+let outsideverticaltrianglescolour = darkblue; // sets the colour of the vertical triangles on the edge of the grid 
 let insideverticaltrianglescolour = darkblue; // sets the colour of the vertical triangles in the centre of the grid
-let insidehorizontaltrianglescolour = lightblue; // sets the colour of the horizontal triangles in the centre of the grid
-let outsidehorizontaltrianglescolour = paleblue; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidehorizontaltrianglescolour = midblue; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = midblue; // sets the colour of the horizontal triangles  on the edge of the grid 
 let insidetrianglescolour = verypaleblue; // sets the colour of the smaller triangles that apper in the if statements
 let diamondcolour = navy // // sets the colour of the diamonds
 
 function setup_wallpaper(pWallpaper) {  
- pWallpaper.output_mode(DEVELOP_GLYPH);
- //pWallpaper.output_mode(GRID_WALLPAPER);
+ //pWallpaper.output_mode(DEVELOP_GLYPH);
+ pWallpaper.output_mode(GRID_WALLPAPER);
   //pWallpaper.output_mode(GLIDE_WALLPAPER);
 
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -65,9 +65,9 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-stroke(3, 4, 94)// navy 
+stroke(3, 4, 94)// sets stroke to navy for all elements
 
-  if(diamonddots < 15){
+  if(diamonddots < 15){ // if statement draws diamonds behind the dots if the diamomddots size is less than 15
 fill(diamondcolour)
 // bottom left diamond
   beginShape();
@@ -200,7 +200,7 @@ triangle(start+90, start-82.5, start+90, start-17.5, start+60, start-50)
   circle(150, 150, diamonddots);
 
 
- if(diamonddots == 0){
+ if(diamonddots == 0){ // if statement draws inside triangle cut outs if the diamonddots size is 0
 // inside triangles cut outs 
 fill(insidetrianglescolour); 
 // bottom left
@@ -228,7 +228,7 @@ triangle(start+29.5, start-15, start+70.5, start-15, start+50, start-33)
 triangle(start+85, start-70.5, start+85, start-29.5, start+67, start-50)
  }
 
- if(diamonddots == 19){
+ if(diamonddots == 19){ // if statement draws inside triangle cut outs if the diamonddots size is 19
 // inside triangles cut outs 
 fill(insidetrianglescolour); 
 // bottom left
