@@ -25,9 +25,9 @@ let firstdots = 4; // sets size of the dots closest to the centre of the canvas
 let seconddots = 4; // sets size of the dots second closest to the centre of the canvas
 let thirddots = 4; // sets size of the dots third closest to the centre of the canvas
 let diamonddots = 20; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
-// when diamond dots = 0 if statement on line 206 activates (smaller triangles will be drawn inside the original triangles) 
-// when diamond dots = 19 if statement on line 242 activates (smaller triangles will be drawn inside the original triangles) 
-// when diamond dots = 14 or less if statement on line 48 activates (draws the diamonds underneath the dots)
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 70 activates (draws the diamonds underneath the dots)
 
 // colour changing parameter variables
 let backgroundcolour = palegreen; // sets the background colour
