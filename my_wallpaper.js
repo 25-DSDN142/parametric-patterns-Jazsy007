@@ -16,32 +16,32 @@ let sand = [252, 232, 213]; // beige
 
 // parameter variables that I will change to create my nine wallpapers
 let start = 100; // sets center of canvas to draw shapes in relation to
-let linestrokeweight = 2; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
-let centrecircle = 20; // sets size of circle in the center of the canvas
-let outercircles = 15; // sets size of circles on the corners of the grid
-let pluscircles = 10; // sets size of the circles in the middle of the corner cirles on the grid boundry 
-let firstdots = 7; // sets size of the dots closest to the centre of the canvas
-let seconddots = 6; // sets size of the dots second closest to the centre of the canvas
+let linestrokeweight = 1.5; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 70; // sets size of circle in the center of the canvas
+let outercircles = 60; // sets size of circles on the corners of the grid
+let pluscircles = 50; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 10; // sets size of the dots closest to the centre of the canvas
+let seconddots = 7; // sets size of the dots second closest to the centre of the canvas
 let thirddots = 5; // sets size of the dots third closest to the centre of the canvas
-let diamonddots = 0; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
-// when diamond dots = 0 if statement on line 202 activates (smaller triangles will be drawn inside the original triangles) 
-// when diamond dots = 19 if statement on line 230 activates (smaller triangles will be drawn inside the original triangles) 
+let diamonddots = 12; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
 // when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
 
 // colour changing parameter variables that I will change to create my nine wallpapers
-let backgroundcolour = seafoam; // sets the background colour
-let centrecirclecolour = tideblue; // sets the colour of the centre circle 
-let outercirclescolour = trenchblue; // sets the colour of the outer circles 
-let pluscirclescolour = waveblue; // sets the colour of the plus circles 
-let firstdotscolour = coralpink; // sets the colour of the first set of dots
-let seconddotscolour = reefgreen; // sets the colour of the second set of dots
-let thirddotscolour = shellpink; // sets the colour of the third set of dots
-let diamonddotscolour = shellpink; // sets the colour of the diamond dots
+let backgroundcolour = palesky; // sets the background colour
+let centrecirclecolour = deepsea; // sets the colour of the centre circle 
+let outercirclescolour = deepsea; // sets the colour of the outer circles 
+let pluscirclescolour = deepsea; // sets the colour of the plus circles 
+let firstdotscolour = trenchblue; // sets the colour of the first set of dots
+let seconddotscolour = waveblue; // sets the colour of the second set of dots
+let thirddotscolour = tideblue; // sets the colour of the third set of dots
+let diamonddotscolour = seafoam; // sets the colour of the diamond dots
 let linescolour = deepsea;  // sets the colour of the lines
-let outsideverticaltrianglescolour = trenchblue; // sets the colour of the vertical triangles on the edge of the grid 
-let insideverticaltrianglescolour = tideblue; // sets the colour of the vertical triangles in the centre of the grid
-let insidehorizontaltrianglescolour = palesky; // sets the colour of the horizontal triangles in the centre of the grid
-let outsidehorizontaltrianglescolour = waveblue; // sets the colour of the horizontal triangles  on the edge of the grid 
+let outsideverticaltrianglescolour = coralpink; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = reefgreen; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = coralpink; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = reefgreen; // sets the colour of the horizontal triangles  on the edge of the grid 
 let insidetrianglescolour = seafoam; // sets the colour of the smaller triangles that apper in the if statements
 let diamondcolour = deepsea // // sets the colour of the diamonds
 
@@ -105,20 +105,6 @@ fill(diamondcolour)
 fill(centrecirclecolour)
 circle(start, start, centrecircle);
 
- // plus circles
- fill(pluscirclescolour)
-circle(start, start-100, pluscircles);
-circle(start, start+100, pluscircles);
-circle(start-100, start, pluscircles);
-circle(start+100, start, pluscircles);
-
- // outer circles
- fill(outercirclescolour)
-circle(start-100, start-100, outercircles);
-circle(start+100, start-100, outercircles);
-circle(start-100, start+100, outercircles);
-circle(start+100, start+100, outercircles);
-
 // lines 
 stroke(linescolour) 
 strokeWeight(linestrokeweight);
@@ -127,6 +113,7 @@ line(start, start+82.5, start, start+17.5);
 line(start+82.5, start, start+17.5, start);
 line(start-17.5, start, start-82.5, start);
 strokeWeight(1);
+stroke(3, 4, 94)// sets stroke to navy for all elements
 
 // first dots 
  fill(firstdotscolour)
@@ -190,6 +177,20 @@ triangle(start+17.5, start-10, start+82.5, start-10, start+50, start-40)
 fill(outsideverticaltrianglescolour)
 triangle(start+90, start-82.5, start+90, start-17.5, start+60, start-50)
 
+
+ // plus circles
+ fill(pluscirclescolour)
+circle(start, start-100, pluscircles);
+circle(start, start+100, pluscircles);
+circle(start-100, start, pluscircles);
+circle(start+100, start, pluscircles);
+
+ // outer circles
+ fill(outercirclescolour)
+circle(start-100, start-100, outercircles);
+circle(start+100, start-100, outercircles);
+circle(start-100, start+100, outercircles);
+circle(start+100, start+100, outercircles);
 
   // diamond dots 
   fill(diamonddotscolour)
