@@ -1,54 +1,449 @@
-You will need to fill out this file for hand in. 
-
-The bellow is just an example, feel free to disregard this documents contents.
-
-
-Your final settings.txt will look something like this when you are finished:
-
 /////////////////////////////////
 
 Wallpaper 1:
-
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
-}
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 5; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 65; // sets size of circle in the center of the canvas
+let outercircles = 65; // sets size of circles on the corners of the grid
+let pluscircles = 35; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 7; // sets size of the dots closest to the centre of the canvas
+let seconddots = 7; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 7; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 13; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = deepsea; // sets the background colour
+let centrecirclecolour = reefgreen; // sets the colour of the centre circle 
+let outercirclescolour = sand; // sets the colour of the outer circles 
+let pluscirclescolour = tideblue; // sets the colour of the plus circles 
+let firstdotscolour = seafoam; // sets the colour of the first set of dots
+let seconddotscolour = seafoam; // sets the colour of the second set of dots
+let thirddotscolour = seafoam; // sets the colour of the third set of dots
+let diamonddotscolour = trenchblue; // sets the colour of the diamond dots
+let linescolour = deepsea;  // sets the colour of the lines
+let outsideverticaltrianglescolour = shellpink; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = shellpink; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = shellpink; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = shellpink; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = deepsea; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
 
 /////////////////////////////////
 
 Wallpaper 2:
-
 //your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
-}
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 2; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 20; // sets size of circle in the center of the canvas
+let outercircles = 15; // sets size of circles on the corners of the grid
+let pluscircles = 10; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 7; // sets size of the dots closest to the centre of the canvas
+let seconddots = 6; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 5; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 19; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = deepsea; // sets the background colour
+let centrecirclecolour = tideblue; // sets the colour of the centre circle 
+let outercirclescolour = trenchblue; // sets the colour of the outer circles 
+let pluscirclescolour = waveblue; // sets the colour of the plus circles 
+let firstdotscolour = coralpink; // sets the colour of the first set of dots
+let seconddotscolour = reefgreen; // sets the colour of the second set of dots
+let thirddotscolour = shellpink; // sets the colour of the third set of dots
+let diamonddotscolour = shellpink; // sets the colour of the diamond dots
+let linescolour = deepsea;  // sets the colour of the lines
+let outsideverticaltrianglescolour = trenchblue; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = tideblue; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = palesky; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = waveblue; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = deepsea; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
+
+/////////////////////////////////
+
+Wallpaper 3:
+//your parameter variables go here!
+
+
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 20; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 40; // sets size of circle in the center of the canvas
+let outercircles = 50; // sets size of circles on the corners of the grid
+let pluscircles = 25; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 5; // sets size of the dots closest to the centre of the canvas
+let seconddots = 5; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 5; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 0; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = trenchblue; // sets the background colour
+let centrecirclecolour = reefgreen; // sets the colour of the centre circle 
+let outercirclescolour = sand; // sets the colour of the outer circles 
+let pluscirclescolour = shellpink; // sets the colour of the plus circles 
+let firstdotscolour = seafoam; // sets the colour of the first set of dots
+let seconddotscolour = seafoam; // sets the colour of the second set of dots
+let thirddotscolour = seafoam; // sets the colour of the third set of dots
+let diamonddotscolour = trenchblue; // sets the colour of the diamond dots
+let linescolour = trenchblue;  // sets the colour of the lines
+let outsideverticaltrianglescolour = palesky; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = palesky; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = palesky; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = palesky; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = coralpink; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = waveblue // // sets the colour of the diamonds
+
+/////////////////////////////////
+
+Wallpaper 4:
+//your parameter variables go here!
+
+
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 2; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 19; // sets size of circle in the center of the canvas
+let outercircles = 16; // sets size of circles on the corners of the grid
+let pluscircles = 12; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 8; // sets size of the dots closest to the centre of the canvas
+let seconddots = 7; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 6; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 0; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = seafoam; // sets the background colour
+let centrecirclecolour = sand; // sets the colour of the centre circle 
+let outercirclescolour = trenchblue; // sets the colour of the outer circles 
+let pluscirclescolour = waveblue; // sets the colour of the plus circles 
+let firstdotscolour = coralpink; // sets the colour of the first set of dots
+let seconddotscolour = reefgreen; // sets the colour of the second set of dots
+let thirddotscolour = shellpink; // sets the colour of the third set of dots
+let diamonddotscolour = shellpink; // sets the colour of the diamond dots
+let linescolour = deepsea;  // sets the colour of the lines
+let outsideverticaltrianglescolour = trenchblue; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = tideblue; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = palesky; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = waveblue; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = seafoam; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
+
+/////////////////////////////////
+
+Wallpaper 5:
+//your parameter variables go here!
+
+
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 2; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 5; // sets size of circle in the center of the canvas
+let outercircles = 25; // sets size of circles on the corners of the grid
+let pluscircles = 13; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 8; // sets size of the dots closest to the centre of the canvas
+let seconddots = 8; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 8; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 10; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = deepsea; // sets the background colour
+let centrecirclecolour = tideblue; // sets the colour of the centre circle 
+let outercirclescolour = trenchblue; // sets the colour of the outer circles 
+let pluscirclescolour = waveblue; // sets the colour of the plus circles 
+let firstdotscolour = reefgreen; // sets the colour of the first set of dots
+let seconddotscolour = reefgreen; // sets the colour of the second set of dots
+let thirddotscolour = reefgreen; // sets the colour of the third set of dots
+let diamonddotscolour = coralpink; // sets the colour of the diamond dots
+let linescolour = deepsea;  // sets the colour of the lines
+let outsideverticaltrianglescolour = sand; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = sand; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = sand; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = sand; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = deepsea; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
+
+/////////////////////////////////
+
+Wallpaper 6:
+//your parameter variables go here!
+
+
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 1.8; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 7; // sets size of circle in the center of the canvas
+let outercircles = 7; // sets size of circles on the corners of the grid
+let pluscircles = 7; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 10; // sets size of the dots closest to the centre of the canvas
+let seconddots = 7; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 5; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 19; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = seafoam; // sets the background colour
+let centrecirclecolour = deepsea; // sets the colour of the centre circle 
+let outercirclescolour = deepsea; // sets the colour of the outer circles 
+let pluscirclescolour = deepsea; // sets the colour of the plus circles 
+let firstdotscolour = sand; // sets the colour of the first set of dots
+let seconddotscolour = sand; // sets the colour of the second set of dots
+let thirddotscolour = sand; // sets the colour of the third set of dots
+let diamonddotscolour = shellpink; // sets the colour of the diamond dots
+let linescolour = deepsea;  // sets the colour of the lines
+let outsideverticaltrianglescolour = coralpink; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = shellpink; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = coralpink; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = shellpink; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = seafoam; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
+
+/////////////////////////////////
+
+Wallpaper 7:
+//your parameter variables go here!
+
+
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 5; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 55; // sets size of circle in the center of the canvas
+let outercircles = 60; // sets size of circles on the corners of the grid
+let pluscircles = 45; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 12; // sets size of the dots closest to the centre of the canvas
+let seconddots = 12; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 12; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 8; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = tideblue; // sets the background colour
+let centrecirclecolour = sand; // sets the colour of the centre circle 
+let outercirclescolour = shellpink; // sets the colour of the outer circles 
+let pluscirclescolour = reefgreen; // sets the colour of the plus circles 
+let firstdotscolour = deepsea; // sets the colour of the first set of dots
+let seconddotscolour = deepsea; // sets the colour of the second set of dots
+let thirddotscolour = deepsea; // sets the colour of the third set of dots
+let diamonddotscolour = coralpink; // sets the colour of the diamond dots
+let linescolour = deepsea;  // sets the colour of the lines
+let outsideverticaltrianglescolour = tideblue; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = tideblue; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = tideblue; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = tideblue; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = tideblue; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
+
+/////////////////////////////////
+
+Wallpaper 8:
+//your parameter variables go here!
+
+
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 1.5; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 15; // sets size of circle in the center of the canvas
+let outercircles = 11; // sets size of circles on the corners of the grid
+let pluscircles = 20; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 10; // sets size of the dots closest to the centre of the canvas
+let seconddots = 7; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 5; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 12; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = seafoam; // sets the background colour
+let centrecirclecolour = deepsea; // sets the colour of the centre circle 
+let outercirclescolour = deepsea; // sets the colour of the outer circles 
+let pluscirclescolour = deepsea; // sets the colour of the plus circles 
+let firstdotscolour = trenchblue; // sets the colour of the first set of dots
+let seconddotscolour = waveblue; // sets the colour of the second set of dots
+let thirddotscolour = tideblue; // sets the colour of the third set of dots
+let diamonddotscolour = seafoam; // sets the colour of the diamond dots
+let linescolour = deepsea;  // sets the colour of the lines
+let outsideverticaltrianglescolour = coralpink; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = reefgreen; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = coralpink; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = reefgreen; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = seafoam; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
+
+/////////////////////////////////
+
+Wallpaper 9:
+//your parameter variables go here!
+
+
+// defining colour palette (won't be changed)
+let seafoam = [222, 248, 255]; // very pale blue 
+let palesky = [183, 230, 249]; // pale blue 
+let tideblue = [144, 224, 250]; // light blue 
+let waveblue = [50, 203, 255]; // middle blue  
+let trenchblue = [0, 119, 205]; // dark blue 
+let deepsea = [3, 4, 94]; // navy  
+let shellpink = [255, 189, 227]; // light pink 
+let coralpink = [255, 111, 174]; // bright pink  
+let reefgreen = [167, 232, 189]; // pale green 
+let sand = [252, 232, 213]; // beige
+
+
+// parameter variables that I will change to create my nine wallpapers
+let start = 100; // sets center of canvas to draw shapes in relation to
+let linestrokeweight = 8; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
+let centrecircle = 30; // sets size of circle in the center of the canvas
+let outercircles = 50; // sets size of circles on the corners of the grid
+let pluscircles = 15; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 5; // sets size of the dots closest to the centre of the canvas
+let seconddots = 5; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 5; // sets size of the dots third closest to the centre of the canvas
+let diamonddots = 19; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
+// when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
+// when diamond dots = 14 or less if statement on line 69 activates (draws the diamonds underneath the dots)
+
+// colour changing parameter variables that I will change to create my nine wallpapers
+let backgroundcolour = waveblue; // sets the background colour
+let centrecirclecolour = deepsea; // sets the colour of the centre circle 
+let outercirclescolour = deepsea; // sets the colour of the outer circles 
+let pluscirclescolour = deepsea; // sets the colour of the plus circles 
+let firstdotscolour = palesky; // sets the colour of the first set of dots
+let seconddotscolour = palesky; // sets the colour of the second set of dots
+let thirddotscolour = palesky; // sets the colour of the third set of dots
+let diamonddotscolour = coralpink; // sets the colour of the diamond dots
+let linescolour = trenchblue;  // sets the colour of the lines
+let outsideverticaltrianglescolour = shellpink; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = shellpink; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = shellpink; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = shellpink; // sets the colour of the horizontal triangles  on the edge of the grid 
+let insidetrianglescolour = palesky; // sets the colour of the smaller triangles that apper in the if statements
+let diamondcolour = deepsea // // sets the colour of the diamonds
