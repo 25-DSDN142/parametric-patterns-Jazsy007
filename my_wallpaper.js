@@ -17,12 +17,12 @@ let sand = [252, 232, 213]; // beige
 // parameter variables that I will change to create my nine wallpapers
 let start = 100; // sets center of canvas to draw shapes in relation to
 let linestrokeweight = 1.8; // sets the stoke weight of the 4 lines that create a plus in the centre of the canvas
-let centrecircle = 7; // sets size of circle in the center of the canvas
+let centrecircle = 10; // sets size of circle in the center of the canvas
 let outercircles = 7; // sets size of circles on the corners of the grid
-let pluscircles = 7; // sets size of the circles in the middle of the corner cirles on the grid boundry 
-let firstdots = 10; // sets size of the dots closest to the centre of the canvas
-let seconddots = 7; // sets size of the dots second closest to the centre of the canvas
-let thirddots = 5; // sets size of the dots third closest to the centre of the canvas
+let pluscircles = 5; // sets size of the circles in the middle of the corner cirles on the grid boundry 
+let firstdots = 0; // sets size of the dots closest to the centre of the canvas
+let seconddots = 0; // sets size of the dots second closest to the centre of the canvas
+let thirddots = 0; // sets size of the dots third closest to the centre of the canvas
 let diamonddots = 19; // sets size of the dots that sit in the centre of the diamonds in the centre of the triangles 
 // when diamond dots = 0 if statement on line 203 activates (smaller triangles will be drawn inside the original triangles) 
 // when diamond dots = 19 if statement on line 231 activates (smaller triangles will be drawn inside the original triangles) 
@@ -38,10 +38,10 @@ let seconddotscolour = sand; // sets the colour of the second set of dots
 let thirddotscolour = sand; // sets the colour of the third set of dots
 let diamonddotscolour = shellpink; // sets the colour of the diamond dots
 let linescolour = deepsea;  // sets the colour of the lines
-let outsideverticaltrianglescolour = coralpink; // sets the colour of the vertical triangles on the edge of the grid 
-let insideverticaltrianglescolour = shellpink; // sets the colour of the vertical triangles in the centre of the grid
-let insidehorizontaltrianglescolour = coralpink; // sets the colour of the horizontal triangles in the centre of the grid
-let outsidehorizontaltrianglescolour = shellpink; // sets the colour of the horizontal triangles  on the edge of the grid 
+let outsideverticaltrianglescolour = palesky; // sets the colour of the vertical triangles on the edge of the grid 
+let insideverticaltrianglescolour = tideblue; // sets the colour of the vertical triangles in the centre of the grid
+let insidehorizontaltrianglescolour = waveblue; // sets the colour of the horizontal triangles in the centre of the grid
+let outsidehorizontaltrianglescolour = trenchblue; // sets the colour of the horizontal triangles  on the edge of the grid 
 let insidetrianglescolour = seafoam; // sets the colour of the smaller triangles that apper in the if statements
 let diamondcolour = deepsea // // sets the colour of the diamonds
 
@@ -50,7 +50,7 @@ function setup_wallpaper(pWallpaper) {
  pWallpaper.output_mode(GRID_WALLPAPER);
   //pWallpaper.output_mode(GLIDE_WALLPAPER);
 
-  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
